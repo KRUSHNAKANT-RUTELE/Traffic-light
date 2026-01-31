@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: bisque;
+        }
+
+        div{
+            background-color:  slategrey;
+            border-radius: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+        }
+
+        input{
+            height: 30px;
+            width: 40%;
+            font-family: cursive;
+            padding-left: 10px;
+        }
+
+        #email{
+            width: 45%;
+            
+        }
+
+        button{
+            height: 40px;
+            width: 80px;
+            border-radius: 10px;
+            background-color: rgb(218, 149, 100);
+            font-weight: bold;
+            transition: 0.5s;
+        }
+
+        button:hover{
+            background-color: grey;
+                /* opacity: 0.8; */
+        }
+    </style>
+</head>
+<body>
+    <h1>submit your email aand password</h1>
+    
+  <form>
+    <div>
+        <label> Email : <input id="email" type="email" placeholder="email"></label><br> <br>
+  
+    <label> Password : <input id="pass" type="password" placeholder="password" required></label><br> <br>
+  
+    <button type="submit">Submit</button> <button type="reset">Reset</button>
+</div></form>
+<script>
+    let myData = document.querySelector('form')
+
+    
+    myData.addEventListener('submit',(event)=>{
+        
+        let myEmail = document.getElementById('email').value
+        let myPass = document.getElementById('pass').value    
+            console.log(myEmail)
+            console.log(myPass)
+        event.preventDefault()
+
+        if(myPass.length < 6){
+            alert("password is to short")
+        } else if(myPass.length > 10){
+            alert("Passeord is to big")
+        } else{
+            window.location.href="welcome.html"
+        }
+                    
+        })    
+
+
+</script>
+</body>
+</html>
